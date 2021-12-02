@@ -14,9 +14,9 @@ describe('AppController', () => {
     appController = app.get<AppController>(AppController);
   });
 
-  describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(appController.getHello()).toBe('Hello World!');
+  describe('number of members', () => {
+    it('should return 3', () => {
+      expect(appController.getMembers().length).toBe(3);
     });
   });
 });

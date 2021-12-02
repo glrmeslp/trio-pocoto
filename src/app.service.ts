@@ -1,8 +1,9 @@
 import { Injectable } from '@nestjs/common';
+import { members } from './members/members';
 
 @Injectable()
 export class AppService {
-  getHello(): string {
-    return 'Hello World!';
+  getMembers(): any[] {
+    return members;
   }
 }
