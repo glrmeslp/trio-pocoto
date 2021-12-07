@@ -2,9 +2,10 @@ FROM node:14.15.4-alpine3.12
 
 EXPOSE 8080
 
-COPY ./dist /usr/app
-COPY ./node_modules /usr/app
+COPY dist /usr/app
 COPY package.json /usr/app
+
+RUN npm install
 
 WORKDIR /usr/app
 
