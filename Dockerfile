@@ -1,12 +1,13 @@
 FROM node:14.15.4-alpine3.12
 
-EXPOSE 8080
-
-COPY dist /usr/app
-COPY package.json /usr/app
-
-RUN npm install
-
 WORKDIR /usr/app
+
+COPY package*.json ./
+
+RUN npm ci --only=production
+
+COPY dist ./
+
+EXPOSE 3000
 
 ENTRYPOINT ["npm", "run", "start:prod"]
